@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+.score-board {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center
+}
+
+.start-button {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: #ffeb3b;
+  font-weight: bold;
+  font-size: 15;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #8b4513;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.mole {
+  width: 80px;
+  height: 80px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.flicker {
+  font-size: 33px;
+  color: green;
+  animation: flicker 1s infinite alternate;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
